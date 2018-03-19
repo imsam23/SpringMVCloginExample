@@ -7,14 +7,32 @@
 		<title>Login</title>
 	</head>
 	<body>
-		<font color="red">${message}</font>
-		<form:form id="loginForm" method="post" action="login" modelAttribute="loginBean">
 
-			<form:label path="username">Enter your user-name</form:label>
-			<form:input id="username" name="username" path="" /><br>
-			<form:label path="username">Please enter your password</form:label>
-			<form:password id="password" name="password" path="" /><br>
-			<input type="submit" value="Submit" />
-		</form:form>
+			<table border="1" align="center" width="20%" cellpadding="3">
+					<form:form id="loginForm" method="post" action="login" modelAttribute="loginBean">
+			
+                <thead>
+                    <tr>
+                        <th colspan="2">Login Here</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User Name :</td>
+                        <td align="center"><input type="text" name="username" id="username" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td>Password :</td>
+                        <td align="center"><input type="password" name="password" id="password" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><input type="submit" id="Login" value="Login" /></td>
+                        <td align="center"><input type="reset" id="Reset" value="Reset" /></td>
+                    </tr>
+                </tbody>
+                		</form:form>
+                
+            </table>
+              <h3 align="center" style ="color:red">${message}</h3>
 	</body>
 </html>

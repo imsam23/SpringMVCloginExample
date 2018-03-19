@@ -1,0 +1,15 @@
+com\bosch\service\impl\UserServiceImpl.class
+com\jcg\examples\viewBean\LoginBean.class
+com\bosch\controller\LoginController.class
+com\bosch\service\UserService.class
+com\bosch\delegate\LoginDelegate.class
+com\jcg\examples\dao\impl\UserDaoImpl.class
+com\bosch\dao\UserDao.class
+com\jcg\examples\service\UserService.class
+com\bosch\viewBean\LoginBean.class
+com\jcg\examples\dao\UserDao.class
+com\jcg\examples\service\impl\UserServiceImpl.class
+com\jcg\examples\delegate\LoginDelegate.class
+com\jcg\examples\controller\LoginController.class
+com\bosch\dao\impl\UserDaoImpl.class
+com\bosch\selenium\LoginPageTest.class

@@ -7,6 +7,6 @@
 <title>Welcome</title>
 </head>
 <body>
-	<center>Welcome ${loggedInUser}</center>
+	<h3 align="center">Welcome ${loggedInUser} !!</h3>
 </body>
 </html>
