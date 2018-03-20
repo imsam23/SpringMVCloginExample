@@ -4,4 +4,4 @@ ADD /target/SpringMVCloginExample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
 EXPOSE 8080
 WORKDIR /
 WORKDIR /usr/local/tomcat/webapps/bin/
-CMD ["./catalina.sh","run"]
+CMD ["catalina.sh","run"]
