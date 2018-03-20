@@ -3,7 +3,7 @@
 pipeline {
     agent none
     stages {
-        stage('Build') { 
+        stage('Project-Build') { 
                    agent {
                      docker {
                          image 'maven:3.5.3' 
@@ -13,13 +13,13 @@ pipeline {
                      sh 'mvn -B -DskipTests clean install package' 
                        }
             }
-        stage('Docker-Build') {
+        stage('Docker-Image-Build') {
             agent any
             steps {
                 sh 'docker build -t  divyaprabha28/tomcat:v1 .'
                   }
           }
-        stage('Docker-Push') {
+        stage('Docker-Image-Push') {
             agent any
             steps {
                 withCredentials([usernamePassword(credentialsId: '72274943-50a0-4f1f-83e9-b2bb96708a7d', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
