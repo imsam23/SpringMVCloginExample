@@ -1,7 +1,7 @@
 FROM tomcat:8.0
-ENV CATALINA_HOME /opt/apache-tomcat-7.0.37
-ADD /target/SpringMVCloginExample-0.0.1-SNAPSHOT.war /opt/apache-tomcat-7.0.37/webapps
+ENV CATALINA_HOME /usr/local/tomcat
+ADD /target/SpringMVCloginExample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
 EXPOSE 8080
 WORKDIR /
-WORKDIR opt/apache-tomcat-7.0.37/bin/
+WORKDIR /usr/local/tomcat/webapps/bin/
 CMD ["./catalina.sh","run"]
