@@ -16,7 +16,7 @@ pipeline {
         stage('Docker-Build') {
             agent any
             steps {
-                sh 'docker build -t tomcat:v1 .'
+                sh 'docker build -t  divyaprabha28/tomcat:v1 .'
                   }
           }
         stage('Docker-Push') {
