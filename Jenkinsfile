@@ -1,32 +1,7 @@
 #!groovy
 
-pipeline {
-    agent none
-    stages {
-        stage('Project-Build') { 
-                   agent {
-                     docker {
-                         image 'maven:3.5.3' 
-                            }
-                         }
-                 steps {
-                     sh 'mvn -B -DskipTests clean install package' 
-                       }
-            }
-        stage('Docker-Image-Build') {
-            agent any
-            steps {
-                sh 'docker build -t  divyaprabha28/tomcat:v1 .'
-                  }
-          }
-        stage('Docker-Image-Push') {
-            agent any
-            steps {
-                withCredentials([usernamePassword(credentialsId: '72274943-50a0-4f1f-83e9-b2bb96708a7d', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                sh 'docker push divyaprabha28/tomcat:v1'
-                  }
-          }
-       }
-   }
+node{
+    sh 'git rev-parse HEAD>GIT_COMMIT'
+    def shortCommit = readFile('GIT_COMMIT').take(6)
+    println(shortCommit)
 }
